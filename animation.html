@@ -1,0 +1,302 @@
+<html>
+<style>
+    .container {
+        height: 800px;
+        width: 1000px;
+        margin: 0 auto;
+        background: skyblue;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .ocean {
+        width: 1000%;
+        height: 100px;
+        background: linear-gradient(90deg, #27b6b9 0%, #0f4061 100%);
+        bottom: 0;
+        position: absolute;
+    }
+
+    .ocean::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        background-repeat: repeat;
+        height: 80px;
+        background-size: 80px 80px;
+        background-image:
+            radial-gradient(circle at 40px 78px, transparent 42px, skyblue 42px);
+    }
+
+    .housewall {
+        width: 500px;
+        height: 200px;
+        background: #FFF5E6;
+        bottom: 0px;
+        left: 200px;
+        position: absolute;
+        z-index: 99;
+    }
+
+    .houseside {
+        width: 140px;
+        height: 212px;
+        background: #FFEAAB;
+        bottom: 0px;
+        left: 700px;
+        position: absolute;
+        z-index: 99;
+        transform: skewy(-10deg);
+    }
+
+    .land {
+        width: 1000%;
+        height: 20px;
+        background: brown;
+        bottom: 0;
+        position: absolute;
+    }
+
+    .housewallF1 {
+        width: 500px;
+        height: 200px;
+        background: #FFF5E6;
+        bottom: 210px;
+        left: 200px;
+        position: absolute;
+        z-index: 99;
+    }
+    
+    
+    .housewallF1Top {
+        width: 500px;
+        height: 200px;
+        background: red;
+        top: 800;
+        left: 200;
+        position: absolute;
+        z-index: 5000;
+    }
+
+    .housesideF1 {
+        width: 140px;
+        height: 200px;
+        background: #FFEAAB;
+        bottom: 222px;
+        left: 700px;
+        position: absolute;
+        z-index: 99;
+        transform: skewy(-10deg);
+    }
+
+    .shade {
+        width: 510px;
+        height: 60;
+        background: #fff;
+        bottom: 130;
+        left: 172px;
+        position: absolute;
+        z-index: 150;
+        transform: skewX(-40deg);
+        background: repeating-linear-gradient(-90deg,
+                red 0, red 20px, white 20px, white 40px);
+    }
+
+    .door {
+        width: 440px;
+        height: 160;
+        background: #5f0d0d;
+        bottom: 0;
+        left: 230px;
+        position: absolute;
+        z-index: 99;
+    }
+
+    .doorshade {
+        width: 20px;
+        height: 160;
+        content="";
+        background: #380000;
+        position: absolute;
+        z-index: 99;
+        bottom: 0;
+        left: 230px;
+        z-index: 100;
+    }
+
+    .doorshade {
+        width: 180px;
+        height: 150;
+        content="";
+        background: #380000;
+        position: absolute;
+        z-index: 99;
+        bottom: 0;
+        left: 230px;
+        z-index: 100;
+        transform: skewy(-10deg);
+    }
+
+    .doorbackshade {
+        width: 260px;
+        height: 130;
+        content="";
+        background: #270303;
+        position: absolute;
+        z-index: 99;
+        bottom: 16px;
+        left: 410px;
+        z-index: 100;
+    }
+
+    .shadeShadow {
+        width: 500px;
+        height: 20px;
+        background: #9a864a;
+        bottom: 100px;
+        left: 182px;
+        position: absolute;
+        z-index: 99;
+        filter: blur(20px);
+    }
+
+    .stripesDesign {
+        width: 510px;
+        height: 20px;
+        background: repeating-linear-gradient(-90deg,
+                red 0, #9e0000 20px, white 20px, #cacac9 40px);
+        bottom: 114px;
+        left: 146px;
+        position: absolute;
+        z-index: 103;
+
+    }
+
+    .floordiv {
+        width: 516px;
+        height: 20px;
+        background: #e4cb80;
+        bottom: 192;
+        left: 190px;
+        position: absolute;
+        z-index: 120;
+        border-radius: 4px 0 0 4px
+    }
+    .floordivtop {
+        width: 516px;
+        height: 8px;
+        background: #b59a0b;
+        bottom: 210;
+        left: 197px;
+        position: absolute;
+        z-index: 120; 
+        transform:skewX(-60deg);
+    }
+
+    .floordivside {
+        width: 140px;
+        height: 20px;
+        background: #b59a4b;
+        bottom: 204;
+        left: 705px;
+        position: absolute;
+        z-index: 120;
+        transform:skewY(-10deg);
+    }
+    .floordivsidetop { width: 140px;
+        height: 24px;
+        background: #b59a6b;
+        bottom: 204;
+        left: 705px;
+        position: absolute;
+        z-index: 119;
+        transform:skewY(-10deg);}
+    .cloud {width: 80px;
+        height: 50px;
+        background: rgba(255,255,255,0.8);
+        top: 204;
+        left: 105px;
+        position: absolute;
+        z-index: 200; 
+        border-radius: 50%;
+      
+    }
+    .cloud1 {width: 80px;
+        height: 50px;
+        background: rgba(255,255,255,0.8);
+        top: 204;
+        left: 20;
+        position: absolute;
+        z-index: 200; 
+        border-radius: 50%;
+       
+    }
+    .cloud2 {width: 90px;
+        height: 80px;
+        background: rgba(255,255,255,0.9);
+        top: 180px;
+        left: 60;
+        position: absolute;
+        z-index: 210; 
+        border-radius: 50%;
+       
+    }
+    .groupCloud { animation : groupCloud 20s infinite alternate;
+   }
+
+    @keyframes groupCloud {
+       0% {
+        transform : translateY(10px) translateX(0); 
+            
+    }
+        25% { transform : translateY(80px) translateX(-100%);}
+        
+        50% {
+        transform : translateY(100) translateX(-100%); 
+         
+    }
+         75% { transform : translateX(100%);
+    100% {
+        transform : translateY(0) translateX(0%); 
+    }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class = "groupCloud">
+            <div class = "cloud"></div>
+            <div class = "cloud1"></div>
+            <div class = "cloud2"></div>
+        </div>
+        <div class="housewall"></div>
+        <div class="houseside"></div>
+        
+        <div class="floordivtop"></div><div class="floordivsidetop"></div>
+        <div class="floordiv"></div>
+        <div class="floordivside"></div>
+        <div class="housewallF1"></div>
+        
+        
+        <div class="housewallF1Top"></div>
+        
+        
+        <div class="housesideF1"></div>
+        <div class="stripesDesign"></div>
+        <div class="stripes"></div>
+        <div class="shade"></div>
+        <div class="doorshade"></div>
+        <div class="doorbackshade"></div>
+
+        <div class="door">
+
+        </div>
+        <div class="shadeShadow"></div>
+        <div class="ocean" />
+        <div class="land" />
+    </div>
+</body>
+
+</html>
